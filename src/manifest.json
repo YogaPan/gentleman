@@ -1,0 +1,32 @@
+{
+  "name": "Gentleman",
+  "version": "0.0.1",
+  "description": "Gentleman",
+  "permissions": ["tabs", "contextMenus"],
+  "omnibox": { "keyword": "GEN" },
+  "background": {
+    "scripts": ["background.js", "hotReload.js"],
+    "persistant": true
+  },
+  // "browser_action": {
+  //   "default_icon": "icontest.png",
+  //   "default_title": "Gentleman"
+  // },
+  "commands": {
+    "toggle-feature-foo": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K",
+        "chromeos": "Ctrl+Shift+K",
+        "linux": "Ctrl+Shift+K"
+      },
+      "description": "gentleman"
+    }
+  },
+  "icons": {
+    "16": "icontest.png",
+    "48": "icontest.png",
+    "128": "icontest.png"
+  },
+  "manifest_version": 2
+}
