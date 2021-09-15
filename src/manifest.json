@@ -2,31 +2,42 @@
   "name": "Gentleman",
   "version": "0.0.1",
   "description": "Gentleman",
-  "permissions": ["tabs", "contextMenus"],
-  "omnibox": { "keyword": "GEN" },
-  "background": {
-    "scripts": ["background.js", "hotReload.js"],
-    "persistant": true
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   },
-  // "browser_action": {
-  //   "default_icon": "icontest.png",
-  //   "default_title": "Gentleman"
-  // },
+  "manifest_version": 3,
+  "permissions": ["tabs", "contextMenus"],
+  "omnibox": {
+    "keyword": "GEN"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "Gentleman",
+    "default_popup": "popup.html"
+  },
   "commands": {
-    "toggle-feature-foo": {
+    "push": {
       "suggested_key": {
         "windows": "Ctrl+Shift+K",
         "mac": "Command+Shift+K",
         "chromeos": "Ctrl+Shift+K",
         "linux": "Ctrl+Shift+K"
       },
-      "description": "gentleman"
+      "description": "push all NSFW tabs"
+    },
+    "pop": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z",
+        "chromeos": "Ctrl+Shift+Z",
+        "linux": "Ctrl+Shift+Z"
+      },
+      "description": "pop all NSFW tabs"
     }
-  },
-  "icons": {
-    "16": "icontest.png",
-    "48": "icontest.png",
-    "128": "icontest.png"
-  },
-  "manifest_version": 2
+  }
 }

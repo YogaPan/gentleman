@@ -1,1 +1,1 @@
-console.log("popup.js loaded");
+// console.log('popup.js loaded')
