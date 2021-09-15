@@ -1,0 +1,4 @@
+{
+  "extends": ["@galtz-library/eslint-config/lib/vanilla"],
+  "env": { "webextensions": true }
+}
