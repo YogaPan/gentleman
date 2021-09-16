@@ -3,22 +3,21 @@
   "version": "0.0.1",
   "description": "Gentleman",
   "icons": {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+    "16": "/images/icon.png",
+    "32": "/images/icon.png",
+    "48": "/images/icon.png",
+    "128": "/images/icon.png"
   },
   "manifest_version": 3,
-  "permissions": ["tabs", "contextMenus"],
+  "permissions": [
+    "tabs",
+    "contextMenus"
+  ],
   "omnibox": {
-    "keyword": "GEN"
+    "keyword": "g"
   },
   "background": {
     "service_worker": "background.js"
-  },
-  "action": {
-    "default_icon": "icon.png",
-    "default_title": "Gentleman",
-    "default_popup": "popup.html"
   },
   "commands": {
     "push": {
