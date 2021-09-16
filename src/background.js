@@ -27,8 +27,8 @@ chrome.omnibox.onInputEntered.addListener(text => createTabByNumber(text))
 
 chrome.contextMenus.create({
   id: MENU_ID,
-  title: 'gentleman',
-  contexts: ['all']
+  title: 'Gentleman',
+  contexts: ['selection']
 })
 
 chrome.contextMenus.onClicked.addListener(info => {
@@ -43,8 +43,9 @@ chrome.commands.onCommand.addListener(async command => {
     case 'push': {
       const queryJobs = NSFW_URL_PATTERNS.map(url => chrome.tabs.query({ url }))
       const tabGroups = await Promise.all(queryJobs)
-      const tabs = tabGroups.flat()
-      const tabIds = tabs.map(tab => tab.id)
+      const tabIds = tabGroups.flat().map(tab => tab.id)
+
+      if (!tabIds.length) return
       chrome.tabs.remove(tabIds)
     }
   }
