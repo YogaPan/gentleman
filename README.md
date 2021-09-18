@@ -1,8 +1,16 @@
 # Gentleman
 
-為紳士打造的 Chrome extension，讓紳士們安心地在午夜時享受屬於自己的時光。
+為紳士打造的 Chrome extension，讓紳士們安心在午夜享受屬於自己的時光。
 
 ![gentleman logo](./images/logo.png)
+
+## How to Install
+
+由於 [Content Policies](https://developer.chrome.com/docs/webstore/program_policies/#content_policies)，本工具不會上架至 [Chrome Web Store](https://chrome.google.com/webstore/category/extensions)。請依照以下步驟手動安裝：
+
+- Step 1：透過 `git clone https://github.com/YogaPan/gentleman.git` 獲取原始碼，或是到 [Releases](https://github.com/YogaPan/gentleman/releases) 下載 zip 壓縮檔。
+- Step 2：至 `chrome://extensions/` 打開**開發人員模式**。
+- Step 3：點選載入未封裝項目，選擇 repo 下的 `/src` 資料夾。
 
 ## Features
 
