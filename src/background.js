@@ -1,6 +1,3 @@
-/* eslint-disable-next-line no-console */
-console.log('gentleman background script loaded', new Date().toISOString())
-
 const FALLBACK_URL = 'https://nhentai.net'
 const BASE_URL = 'https://nhentai.net/g/'
 const MENU_ID = 'GENTLEMAN_MENU_ID'
@@ -23,17 +20,22 @@ const createTabByNumber = text => {
   createNewTab(url)
 }
 
-chrome.omnibox.onInputEntered.addListener(text => createTabByNumber(text))
+chrome.runtime.onInstalled.addListener(() => {
+  /* eslint-disable-next-line no-console */
+  console.log('gentleman background script loaded', new Date().toISOString())
 
-chrome.contextMenus.create({
-  id: MENU_ID,
-  title: 'Gentleman',
-  contexts: ['selection']
+  chrome.contextMenus.create({
+    id: MENU_ID,
+    title: 'Gentleman',
+    contexts: ['selection']
+  })
 })
 
 chrome.contextMenus.onClicked.addListener(info => {
   if (info.menuItemId === MENU_ID) createTabByNumber(info.selectionText)
 })
+
+chrome.omnibox.onInputEntered.addListener(text => createTabByNumber(text))
 
 chrome.commands.onCommand.addListener(async command => {
   /* eslint-disable-next-line no-console */
