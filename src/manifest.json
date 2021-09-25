@@ -13,6 +13,10 @@
     "tabs",
     "contextMenus"
   ],
+  "action": {
+    "default_icon": "/images/icon.png",
+    "default_title": "Gentleman"
+  },
   "omnibox": {
     "keyword": "g"
   },
